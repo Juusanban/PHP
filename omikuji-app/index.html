@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>おみくじアプリ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+<main class="app-container">
+    <section class="app-card">
+        <h1>おみくじアプリ</h1>
+        <p class="description">
+            ログインして、今日の運勢を確認しましょう。
+        </p>
+
+        <div id="login-area" class="panel">
+            <h2>ログイン</h2>
+
+            <input
+                    type="text"
+                    id="userid"
+                    placeholder="ユーザーID"
+            >
+
+            <input
+                    type="password"
+                    id="password"
+                    placeholder="パスワード"
+            >
+
+            <button onclick="login()">ログイン</button>
+
+            <p class="test-user">
+                テストユーザー：alice / 1234
+            </p>
+        </div>
+
+        <div id="app-area" class="panel" style="display: none;">
+            <p id="welcome" class="welcome"></p>
+
+            <button onclick="drawOmikuji()">
+                おみくじを引く
+            </button>
+
+            <div class="result-box">
+                <p id="result">結果がここに表示されます。</p>
+
+                <img
+                        id="result-img"
+                        alt="おみくじの結果"
+                        style="display: none;"
+                >
+            </div>
+
+            <p id="draw-count">
+                おみくじを引いた回数：0回
+            </p>
+
+            <div class="button-group">
+                <button onclick="downloadHistory()">
+                    履歴ダウンロード
+                </button>
+
+                <button class="logout-button" onclick="logout()">
+                    ログアウト
+                </button>
+            </div>
+
+            <h2>履歴</h2>
+            <ul id="history"></ul>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
+
